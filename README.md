@@ -1,8 +1,8 @@
 # Common LLM Settings
 
-This repo was developed to keep track of [the LLM setting information shared in this spreadhseet.](https://docs.google.com/spreadsheets/d/14vbBbuRMEHoqeuMHkTfw3uiZVmyXNuoSp8s-aHvfvZk/edit#gid=0) under version control. 
+This repo was developed to keep track of [the LLM setting information shared in this spreadsheet.](https://docs.google.com/spreadsheets/d/14vbBbuRMEHoqeuMHkTfw3uiZVmyXNuoSp8s-aHvfvZk/edit#gid=0) under version control. 
 
-It renders the yaml file in `public/config` into a table. To update or add a model: (make sure you have `npm`` installed)
+It renders the yaml file in `public/config` into a table. To update or add a model: (make sure you have `npm` installed)
 
 1. Clone the repo.
 2. Update the `schema.yaml` file.
