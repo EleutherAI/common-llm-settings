@@ -1,8 +1,8 @@
 - name: "GPT1"
-  details:
+  data:
     dataset: "Unreleased"
     tokenizer: "GPT-1"
-    training_library: "Unreleased"
+  architecture:
     embeddings: "Learned"
     normalization: "LayerNorm"
     parallel_layers: "No"
@@ -11,14 +11,17 @@
     d_attn_d_ff: 4
     optimizer: "Adam"
     optimizer_hyperparams: "Not Disclosed"
+  optimization:
     lr_warmup: ""
     lr_decay: "Cosine to 0"
     precision: "Not Disclosed"
     clipping: "Not Disclosed"
     dropout: 0.1
     weight_decay: Not disclosed
+  misc:
+    training_library: "Unreleased"
     date: 6/11/2018
-    source: "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf"
+    source: "https://cdn.openai.com/research-covers/language-   unsupervised/language_understanding_paper.pdf"
 - name: "GPT-2"
   details:
     dataset: "Unreleased"
