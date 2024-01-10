@@ -21,85 +21,111 @@ function DataTable() {
   
   const columns = useMemo(() => [
     {
-        Header: 'Name',
-        accessor: 'name'
+        Header: 'Model',
+        columns: [
+            {
+              Header: 'Name',
+              accessor: 'name',
+            }
+          ],
+    
     },
     {
-        Header: 'Dataset',
-        accessor: 'details.dataset'
+        Header: 'Data',
+        columns: [
+            {
+              Header: 'Dataset',
+              accessor: 'data.dataset',
+            },
+            {
+              Header: 'Tokenizer',
+              accessor: 'data.tokenizer',
+            }
+          ],
     },
     {
-        Header: 'Tokenizer',
-        accessor: 'details.tokenizer'
+        Header: 'Architecture',
+        columns: [
+            {
+                Header: 'Normalization',
+                accessor: 'architecture.normalization'
+            },
+            {
+                Header: 'Parallel Layers',
+                accessor: 'architecture.parallel_layers'
+            },
+            {
+                Header: 'Biases',
+                accessor: 'architecture.biases'
+            },
+            {
+                Header: 'Activation Function',
+                accessor: 'architecture.activation_function'
+            },
+            {
+                Header: 'D Attn / D FF',
+                accessor: 'architecture.d_attn_d_ff'
+            },
+            {
+                Header: 'Optimizer',
+                accessor: 'architecture.optimizer'
+            },
+            {
+                Header: 'Optimizer Hyperparameters',
+                accessor: 'architecture.optimizer_hyperparams'
+            },
+            {
+                Header: 'Embeddings',
+                accessor: 'architecture.embeddings'
+            }
+          ],
     },
     {
-        Header: 'Training Library',
-        accessor: 'details.training_library'
+        Header: 'Optimization',
+        columns: [
+            {
+                Header: 'LR Warmup',
+                accessor: 'optimization.lr_warmup'
+            },
+            {
+                Header: 'LR Decay',
+                accessor: 'optimization.lr_decay'
+            },
+            {
+                Header: 'Precision',
+                accessor: 'optimization.precision'
+            },
+            {
+                Header: 'Clipping',
+                accessor: 'optimization.clipping'
+            },
+            {
+                Header: 'Dropout',
+                accessor: 'optimization.dropout'
+            },
+            {
+                Header: 'Weight Decay',
+                accessor: 'optimization.weight_decay'
+            }
+          ],
     },
     {
-        Header: 'Embeddings',
-        accessor: 'details.embeddings'
+        Header: 'Misc',
+        columns: [
+            {
+                Header: 'Training Library',
+                accessor: 'misc.training_library'
+            },
+            {
+                Header: 'Date',
+                accessor: 'misc.date'
+            },
+            {
+                Header: 'Source',
+                accessor: 'misc.source'
+            }
+          ],
     },
-    {
-        Header: 'Normalization',
-        accessor: 'details.normalization'
-    },
-    {
-        Header: 'Parallel Layers',
-        accessor: 'details.parallel_layers'
-    },
-    {
-        Header: 'Biases',
-        accessor: 'details.biases'
-    },
-    {
-        Header: 'Activation Function',
-        accessor: 'details.activation_function'
-    },
-    {
-        Header: 'D Attn / D FF',
-        accessor: 'details.d_attn_d_ff'
-    },
-    {
-        Header: 'Optimizer',
-        accessor: 'details.optimizer'
-    },
-    {
-        Header: 'Optimizer Hyperparameters',
-        accessor: 'details.optimizer_hyperparams'
-    },
-    {
-        Header: 'LR Warmup',
-        accessor: 'details.lr_warmup'
-    },
-    {
-        Header: 'LR Decay',
-        accessor: 'details.lr_decay'
-    },
-    {
-        Header: 'Precision',
-        accessor: 'details.precision'
-    },
-    {
-        Header: 'Clipping',
-        accessor: 'details.clipping'
-    },
-    {
-        Header: 'Dropout',
-        accessor: 'details.dropout'
-    },
-    {
-        Header: 'Weight Decay',
-        accessor: 'details.weight_decay'
-    },
-    {
-        Header: 'Date',
-        accessor: 'details.date'
-    },
-    {
-        Header: 'Source',
-        accessor: 'details.source'
-    }
   ], []);
   
       const tableInstance = useTable({ columns, data }, useSortBy);
@@ -121,7 +147,7 @@ function DataTable() {
               {headerGroups.map(headerGroup => (
                   <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map(column => (
-                          <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                          <th {...column.getHeaderProps(column.getSortByToggleProps())} style={{ textAlign: 'center' }}>
                               {column.render('Header')}
                               <span>
                                   {column.isSorted

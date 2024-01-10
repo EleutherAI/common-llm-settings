@@ -1,6 +1,6 @@
 
 .table-container {
-    width: 900px;
+    width: 1000px;
     margin: auto;
     overflow-x: auto; /* Enables horizontal scrolling if table overflows */
 }
